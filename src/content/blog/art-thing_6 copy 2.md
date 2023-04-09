@@ -1,7 +1,6 @@
 ---
-title: "A watch"
+title: "70 karat golden cock ring"
 description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 08 2023"
+pubDate: "Jul 12 2023"
 heroImage: "/item1.jpg"
-category: "Accessories"
 ---

@@ -11,7 +11,6 @@ import Card from '../components/Card.astro';
 var posts = (await getCollection("blog")).sort(
   (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
-
 ---
 
 <!DOCTYPE html>

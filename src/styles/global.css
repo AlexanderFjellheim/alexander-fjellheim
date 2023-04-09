@@ -40,15 +40,18 @@ body {
 	width: 23%;
   }
 
-  img:hover {
+  .thumbnail-image:hover {
 	box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+	
   }
 
-  img {
+  .thumbnail-image {
 	width: 100%;
 
 	background-color: grey;
 	border-radius: 5px;
+	transition: ease-out 0.2s;
+
   }
 
 /*

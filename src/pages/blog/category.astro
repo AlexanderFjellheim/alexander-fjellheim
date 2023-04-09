@@ -6,17 +6,21 @@ import Card from "../../components/Card.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 
-var posts = (await getCollection("blog")).sort(function(a,b) {
-    if (a.data.title < b.data.title) {
-        return -1;
-    }
-    if (a.data.title > b.data.title) {
-        return 1;
-    }
-    return 0;
+var posts = (await getCollection("blog"));
+
+var categories = posts.flatMap((post) => {
+  if (post.data.category) {
+    return post.data.category;
+  }
+  return null;
+});
+
+function onlyUnique(value, index, array) {
+  return array.indexOf(value) === index;
 }
-//   
-);
+
+categories = categories.filter(onlyUnique);
+
 ---
 
 <!DOCTYPE html>
@@ -29,6 +33,7 @@ var posts = (await getCollection("blog")).sort(function(a,b) {
     <main>
       <div class="title">
         <h2>My art and shit</h2>
+        <p>{}</p>
         <div class="dropdown">
           <button class="dropbtn">Kategori</button>
           <div class="dropdown-content">
@@ -42,19 +47,32 @@ var posts = (await getCollection("blog")).sort(function(a,b) {
       </div>
 
       <section>
-        <div class="section-container" id="section-container_1">
-			{
-				posts.map((post) => (
-					<Card
-						title={post.data.title}
-						src={post.data.heroImage}
-						href={`/blog/${post.slug}/`}
-					>
-				
-					</Card>
-				))
-			}
+
+        <div>
+        {
+            categories.map((category) => (
+            <h3 class="category-title">{category == null ? "Other" : category = category}</h3>
+            
+            
+            <div class="section-container" id="section-container_1">
+              {posts.filter((post) => post.data.category == category).map((post) => (
+                <Card
+                title={post.data.title}
+                src={post.data.heroImage}
+                href={`/blog/${post.slug}/`}
+              >
+                </Card>
+              ))}  
+            </div>
+            
+            
+            ))
+           
+
+         
+        }
         </div>
+        
       </section>
     </main>
     <Footer />

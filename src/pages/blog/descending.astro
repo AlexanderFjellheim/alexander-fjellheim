@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import Card from "../../components/Card.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import { map } from "astro/zod";
 
 var posts = (await getCollection("blog")).sort(
   (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -24,37 +25,30 @@ var posts = (await getCollection("blog")).sort(
         <div class="dropdown">
           <button class="dropbtn">Dato (synkende)</button>
           <div class="dropdown-content">
-
             <a href="/blog/">Dato (stigende)</a>
             <!-- <a href="/blog/descending">Dato (synkende)</a> -->
-			<a href="/blog/category">Kategori</a>
-
+            <a href="/blog/category">Kategori</a>
           </div>
         </div>
       </div>
 
       <section>
         <div class="section-container" id="section-container_1">
-			{
-				posts.map((post) => (
-					<Card
-						title={post.data.title}
-						src={post.data.heroImage}
-						href={`/blog/${post.slug}/`}
-					>
-				
-					</Card>
-				))
-			}
+          {
+            posts.map((post) => (
+              <Card
+                title={post.data.title}
+                src={post.data.heroImage}
+                href={`/blog/${post.slug}/`}
+                category={post.data.category}
+              ></Card>
+            ))
+          }
         </div>
       </section>
     </main>
     <Footer />
-  </body>
-
-</html>
-
-<style>
+  </body><style>
     .title {
       display: flex;
       align-items: center;
@@ -105,4 +99,4 @@ var posts = (await getCollection("blog")).sort(
       background-color: lightgray;
     }
   </style>
-
+</html>
