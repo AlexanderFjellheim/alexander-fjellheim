@@ -3,17 +3,67 @@
   https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+* {
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+
+body {
+	margin: auto;
+	text-align: left;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	line-height: 1.5;
+	color: black;
+	background-color:antiquewhite;
+	width: 80%;
+	align-items: center;
+}
+
+.section-container {
+	display: flex;
+	flex-wrap: wrap;
+
+	justify-content: space-between;
+}
+.card {
+	text-decoration: none;
+	color: black;
+	vertical-align: top;
+	display: inline-block;
+
+	padding-bottom: 1%;
+	width: 23%;
+  }
+
+  img:hover {
+	box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  img {
+	width: 100%;
+
+	background-color: grey;
+	border-radius: 5px;
+  }
+
+/*
 body {
 	font-family: Verdana, sans-serif;
 	margin: auto;
 	padding: 20px;
-	max-width: 65ch;
+	
 	text-align: left;
-	background-color: #fff;
+	background-color: #ffffff44;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	line-height: 1.5;
-	color: #444;
+	color: #000000;
+	border: magenta 2px dotted;
 }
 h1,
 h2,
@@ -64,4 +114,4 @@ blockquote {
 	padding: 2px 0px 2px 20px;
 	margin: 0px;
 	font-style: italic;
-}
+} */

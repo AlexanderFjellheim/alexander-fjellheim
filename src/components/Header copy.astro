@@ -4,13 +4,16 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<HeaderLink href="/">
-		<div class="home">
-			{SITE_TITLE}
-		</div>
-	</HeaderLink>
-
-	<nav>		
+	<h2>
+		{SITE_TITLE}
+	</h2>
+	<nav>
+		<HeaderLink href="/">
+			<div class="home">
+				Home
+			</div>
+		</HeaderLink>
+		
 		<HeaderLink href="/blog">
 			My works
 		</HeaderLink>
@@ -43,6 +46,5 @@ import { SITE_TITLE } from '../consts';
 	nav {
 		display: flex;
 		gap: 5%;
-		justify-content: center;
 	}
 </style>
