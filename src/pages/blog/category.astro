@@ -35,7 +35,7 @@ categories = categories.filter(onlyUnique);
         <h2>My art and shit</h2>
         <p>{}</p>
         <div class="dropdown">
-          <button class="dropbtn">Kategori</button>
+          <button class="dropbtn">Filter: Kategori</button>
           <div class="dropdown-content">
 
             <a href="/blog/">Dato (stigende)</a>
@@ -54,7 +54,7 @@ categories = categories.filter(onlyUnique);
             <h3 class="category-title">{category == null ? "Other" : category = category}</h3>
             
             
-            <div class="section-container" id="section-container_1">
+            <div class="section-container">
               {posts.filter((post) => post.data.category == category).map((post) => (
                 <Card
                 title={post.data.title}

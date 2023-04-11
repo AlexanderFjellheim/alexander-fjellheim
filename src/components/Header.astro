@@ -4,13 +4,16 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<HeaderLink href="/">
-		<div class="home">
-			{SITE_TITLE}
-		</div>
-	</HeaderLink>
 
-	<nav>		
+
+	<nav>
+		<HeaderLink href="/">
+			<div class="home">
+				{SITE_TITLE}
+			</div>
+		</HeaderLink>
+		
+
 		<HeaderLink href="/blog">
 			My works
 		</HeaderLink>
@@ -34,15 +37,27 @@ import { SITE_TITLE } from '../consts';
 </header>
 <style>
 	header {
-		margin: 0em 0 2em;
+		background-color: #F6F1EB;
+		position: sticky;
+		height: 4.5em;
+		box-shadow: 1px 5px 40px #ebe7e1;
+/* 		padding: 0;
+		margin: 0; 
+		width: 100vw;
+		border: 2px red dotted;*/
+		
 	}
 	h2 {
 		margin: 0.5em 0;
 	}
 
 	nav {
+		top: 0;
+		height: inherit;
 		display: flex;
 		gap: 5%;
 		justify-content: center;
+		align-items: center;
+		
 	}
 </style>

@@ -12,27 +12,3 @@ const { src, title, href, category } = Astro.props;
     <img class="thumbnail-image" src={src} />
     <span class="title">{title}{category}</span>
 </a>
-
-<style>
-  .card {
-    text-decoration: none;
-    color: black;
-    vertical-align: top;
-    display: inline-block;
-
-    padding-bottom: 1%;
-    width: 23%;
-  }
-
-  img:hover {
-    box-shadow: 0 30px 40px rgba(0,0,0,.1);
-  }
-
-  img {
-    width: 100%;
-
-    background-color: grey;
-    border-radius: 5px;
-  }
-
-</style>

@@ -1,37 +1,66 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import Card from '../components/Card.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, category} = Astro.props;
+
+
+var posts = (await getCollection("blog"));
+
+
 ---
 
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
+
 	</head>
 
 	<body>
 		<Header />
 		<main>
-			<article>
+			<div class="container">
+				<div class="preview">
+					<img src={heroImage}/>
+					<img src={heroImage}/>
+					<img src={heroImage}/>
+				</div>
+				<img class="product" src={heroImage}/>
+				<div class="description">
+					<h3>{title}<br><span class="price">NOK 19,100</span></h3>
+					
+					<h4>{description}</h4>
+					<h4>{description}</h4>
+				</div>
+			</div>
+
+			<div class="inspiration">
+				<h2>The Story Behind</h2>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore enim maiores consequuntur soluta illo expedita eveniet quod at placeat nihil, deserunt tenetur, architecto, esse rerum cupiditate quisquam. Id, modi omnis?</p>
+			</div>
+
+			<div class="suggestions">
+				<h3 class="category-title">{category == undefined ? "Other" : category}</h3>
+
+				<div class="section-container">
+				{posts.filter((post) => post.data.category == category && post.data.title != title).map((post) => (
+					<Card
+					title={post.data.title}
+					src={post.data.heroImage}
+					href={`/blog/${post.slug}/`}
+				  >
+					</Card>
+				  ))}  
+				</div>
+
+			</div>
+			<!-- <article>
 				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
 				<h1 class="title">{title}</h1>
 				<FormattedDate date={pubDate} />
@@ -44,8 +73,119 @@ const { title, description, pubDate, updatedDate, heroImage} = Astro.props;
 				}
 				<hr />
 				<slot />
-			</article>
+			</article> -->
 		</main>
 		<Footer />
 	</body>
 </html>
+
+
+<style>
+	.container {
+		margin-top: 3rem;
+		display: grid;
+		grid-template-columns: 10% 40% 20%;
+		grid-gap: 15%;
+	}
+
+	.preview {
+
+	}
+	.preview img {
+		cursor: pointer;
+		margin-bottom: 1rem;
+		width: 100%;
+		transition: ease-out 0.15s;
+	}
+	.preview img:hover {
+		box-shadow: 0 5px 0 #444444;;
+	}
+
+	.product {
+		width: 100%;
+	}
+	.description {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 12% 20% auto;
+		grid-row-gap: 4px;
+	}
+
+	.description > * {
+
+		padding-left: 1rem;
+		background-color: #FFFCF7;
+		height: 100%;
+		margin: 0;
+	}
+
+	.price {
+		font-size: smaller;
+	}
+
+
+
+
+	/* .preview {
+		border: 2px blue dotted;
+		width: 10%;
+	}
+
+
+
+	#container {
+		display: flex;
+		justify-content: space-between;
+		border:2px red dotted;
+	}
+
+	#product {
+		flex-direction: row;
+	}
+
+	.description {
+		width: 40%;
+		border: 2px green dotted;
+	
+		display: flex;
+		flex-direction: column;
+		
+		justify-content: space-between;
+	}
+
+	.description > * {
+		background-color: #FFFCF7;
+		border: purple 2px dotted;
+		height: calc(100%/3)
+	}
+
+	.inspiration {
+		
+		background-color: #FFFCF7;
+		
+		margin-top: 2rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+
+		padding-left: 4rem;
+		padding-right: 4rem;
+
+		text-align: center;
+		justify-content: center;
+	} */
+
+
+
+
+	/* .title {
+		font-size: 2em;
+		margin: 0.25em 0 0;
+	}
+	hr {
+		border-top: 1px solid #ddd;
+		margin: 1rem 0;
+	}
+	.last-updated-on {
+		font-style: italic;
+	} */
+</style>
