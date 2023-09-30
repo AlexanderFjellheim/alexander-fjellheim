@@ -17,8 +17,26 @@ const blog = defineCollection({
 		heroImage: z
 			.string().
 			optional(),
+		heroImage2: z
+			.string().
+			optional(),
+		heroImage3: z
+			.string().
+			optional(),
 		category: z
 			.string()
+			.optional(),
+		role: z
+			.string()
+			.optional(),
+		team: z
+			.array(z.string())
+			.optional(),
+		duration: z
+			.string()
+			.optional(),
+		technologies: z
+			.array(z.string())
 			.optional(),
 	}),
 });

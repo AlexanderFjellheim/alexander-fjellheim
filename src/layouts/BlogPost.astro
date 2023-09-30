@@ -5,10 +5,12 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Card from '../components/Card.astro';
+import { SITE_TITLE } from '../consts';
+import Contact from '../components/Contact.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, category} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImage2, heroImage3, category, role, team, duration, technologies} = Astro.props;
 
 
 var posts = (await getCollection("blog"));
@@ -18,7 +20,7 @@ var posts = (await getCollection("blog"));
 
 <html lang="en">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={SITE_TITLE} description={title} />
 
 	</head>
 
@@ -28,21 +30,30 @@ var posts = (await getCollection("blog"));
 			<div class="container">
 				<div class="preview">
 					<img src={heroImage}/>
-					<img src={heroImage}/>
-					<img src={heroImage}/>
+					<img src={heroImage2}/>
+					<img src={heroImage3}/>
 				</div>
 				<img class="product" src={heroImage}/>
 				<div class="description">
-					<h3>{title}<br><span class="price">NOK 19,100</span></h3>
-					
-					<h4>{description}</h4>
-					<h4>{description}</h4>
+					<h3>Rolle 👨‍💻<br>
+						{role}</h3>
+
+					<h3>Team 👥<br>
+						{team?.map((elem) => (
+							<span>{elem}<br></span>
+						))}</h3>
+
+					<h3>Varighet 🕘<br> 
+						{duration}</h3>
+					<h3>Teknologier 🧮<br> 
+						{technologies?.map((elem) => (
+							<span>{elem}<br></span>
+						))}</h3>
 				</div>
 			</div>
 
 			<div class="inspiration">
-				<h2>The Story Behind</h2>
-				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore enim maiores consequuntur soluta illo expedita eveniet quod at placeat nihil, deserunt tenetur, architecto, esse rerum cupiditate quisquam. Id, modi omnis?</p>
+				<slot/>
 			</div>
 
 			<div class="suggestions">
@@ -60,20 +71,9 @@ var posts = (await getCollection("blog"));
 				</div>
 
 			</div>
-			<!-- <article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article> -->
+
+			<Contact />
+
 		</main>
 		<Footer />
 	</body>
@@ -107,80 +107,31 @@ var posts = (await getCollection("blog"));
 	.description {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 12% 20% auto;
+		grid-template-rows: auto auto auto auto;
 		grid-row-gap: 4px;
 	}
 
 	.description > * {
-
+		font-weight: 100;
 		padding-left: 1rem;
+		padding-right: 0.5rem;
 		background-color: #FFFCF7;
 		height: 100%;
 		margin: 0;
 	}
 
-	.price {
-		font-size: smaller;
+	.description > h3::first-line {
+		font-weight: 700;
+		color: rgb(0, 0, 0);
+		font-size: 1em;
 	}
 
-
-
-
-	/* .preview {
-		border: 2px blue dotted;
-		width: 10%;
-	}
-
-
-
-	#container {
-		display: flex;
-		justify-content: space-between;
-		border:2px red dotted;
-	}
-
-	#product {
-		flex-direction: row;
-	}
-
-	.description {
-		width: 40%;
-		border: 2px green dotted;
-	
-		display: flex;
-		flex-direction: column;
-		
-		justify-content: space-between;
-	}
-
-	.description > * {
-		background-color: #FFFCF7;
-		border: purple 2px dotted;
-		height: calc(100%/3)
-	}
 
 	.inspiration {
-		
-		background-color: #FFFCF7;
-		
-		margin-top: 2rem;
-		padding-top: 2rem;
-		padding-bottom: 2rem;
-
-		padding-left: 4rem;
-		padding-right: 4rem;
-
-		text-align: center;
-		justify-content: center;
-	} */
-
-
-
-
-	/* .title {
-		font-size: 2em;
-		margin: 0.25em 0 0;
+		max-width: 720px;
 	}
+
+
 	hr {
 		border-top: 1px solid #ddd;
 		margin: 1rem 0;

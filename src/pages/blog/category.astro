@@ -3,6 +3,7 @@ import BaseHead from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Card from "../../components/Card.astro";
+import Contact from '../../components/Contact.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 
@@ -24,7 +25,7 @@ categories = categories.filter(onlyUnique);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
@@ -32,7 +33,7 @@ categories = categories.filter(onlyUnique);
     <Header />
     <main>
       <div class="title">
-        <h2>My art and shit</h2>
+        <h1>Prosjekter</h1>
         <p>{}</p>
         <div class="dropdown">
           <button class="dropbtn">Filter: Kategori</button>
@@ -74,6 +75,7 @@ categories = categories.filter(onlyUnique);
         </div>
         
       </section>
+      <Contact />
     </main>
     <Footer />
   </body>
