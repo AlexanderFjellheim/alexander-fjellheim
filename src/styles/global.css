@@ -9,6 +9,7 @@
 * {
 	font-family: 'Montserrat', sans-serif;
 	color: #444444;
+	scroll-behavior: smooth;
 }
 
 
@@ -26,6 +27,8 @@ main {
 	overflow-wrap: break-word;
 	width: 80%;
 	align-items: center;
+	max-width: 1500px;
+	margin: auto;
 }
 
 .section-container {
