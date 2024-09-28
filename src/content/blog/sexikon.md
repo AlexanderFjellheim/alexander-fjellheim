@@ -2,9 +2,9 @@
 title: "Studvest: Sexikon"
 description: ""
 pubDate: "Jul 08 2023"
-heroImage: "/sexikon.png"
-heroImage2: "/sexikon.gif"
-heroImage3: "/sexikon2.png"
+heroImage: "/sexikon/sexikon.png"
+heroImage2: "/sexikon/sexikon.gif"
+heroImage3: "/sexikon/sexikon2.png"
 category: "Webutvikling"
 role: "Full-stack utvikling basert på Figma prototype"
 team: ["Alexander Fjellheim", "Emilie Tryggan", "Åshild Løvstakken"]

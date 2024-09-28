@@ -2,9 +2,9 @@
 title: "Studvest: Skimagasinet"
 description: ""
 pubDate: "Jul 09 2023"
-heroImage: "/skimagasinet.png"
-heroImage2: "/skimagasinet.png"
-heroImage3: "/skimagasin.gif"
+heroImage: "/skimagasinet/skimagasinet.png"
+heroImage2: "/skimagasinet/skimagasinet.png"
+heroImage3: "/skimagasinet/skimagasin.gif"
 category: "Webutvikling"
 role: "Utvikling av front-end og komponenter"
 team: ["Alexander Fjellheim", "Emilie Tryggan", "Åshild Løvstakken"]

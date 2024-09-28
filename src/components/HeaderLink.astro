@@ -6,15 +6,26 @@ type Props = HTMLAttributes<'a'>;
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+//const isActive = href === pathname || href === pathname.replace(/\/$/, '');
+
+const isActive = href === pathname && href !== '/';
+
+
+alert("href: " + href)
+alert("pathname: " + pathname)
+
+alert(isActive)
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
 <style>
+
 	a {
-		color: #444444;
+		font-size: 1.2em;
+		font-weight: 700;
+		color: orange;
 		background: none;
 		display: inline-block;
 		text-underline-offset: 0.4em;
@@ -24,11 +35,11 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 		
 	}
 	a.active {
-		font-weight: bolder;
+		
 		text-decoration: underline 0.15em;
 	}
 	a:hover {
-		text-decoration-color: #444444;
+		text-decoration-color: orange;
 		transition: text-decoration-color 0.3s;
 	}
 </style>

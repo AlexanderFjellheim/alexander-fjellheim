@@ -2,9 +2,9 @@
 title: "UI/UX: FoodwAIste App"
 description: ""
 pubDate: "Jul 11 2023"
-heroImage: "/foodwaste.png"
-heroImage2: "/foodwaste.png"
-heroImage3: "/foodwaste.png"
+heroImage: "/foodwaste/foodwaste.png"
+heroImage2: "/foodwaste/foodwaste.png"
+heroImage3: "/foodwaste/foodwaste.png"
 category: "Prototyping"
 role: "Gruppeleder"
 team: ["Alexander Fjellheim", "Medstudent"]

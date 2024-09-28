@@ -1,63 +1,90 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Contact from "../components/Contact.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import Card from "../components/Card.astro";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	updatedDate={new Date('August 08 2022')}
-	heroImage="/placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+			<div id="3d_avatar"></div>
+			<h1>Alexander Fjellheim</h1>
+			<section>
+				<h2>
+					Hei! Jeg er en datateknologi-student ved Universitetet i Bergen med et bredt spektrum av interesser innen teknologi.
+				</h2>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+				<p>
+					I forbindelse med oppdraget jeg fikk fra UiB til å utvikle teknologien til designstudenters bachelorprosjekter, og deres utstillingsinstallasjoner på Universitetsmuseet, har jeg hatt muligheten til å bygge på min erfaring og bruke mine interesser innen:
+				</p>
+		
+				<ul>
+					<li>Computer Vision inference og YOLO-modeller</li>
+					<li>Tensorflow og Torch</li>
+					<li>Edge compute: Coral Ai TPU og Raspberry PI, CUDA og TensorRT</li>
+					<li>Front-end UI: JS/CSS SPA, og TKinter</li>
+					<li>Back-end server med Flask</li>
+					<li>Systemd og automatisering av prosesser i GNU/Linux</li>
+					<li>Forskjellige former for brukerinteraksjon bl.a touchskjermer og arcadeknapper, og brukertesting</li>
+					<li>Finne løsninger til å ta idéer og prototyper til et helhetlig produkt</li>
+					<li>CAD-design og 3D-printing samt lodding og programmering av mikrokontrollere.</li>
+				</ul>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+				<p>
+					Jeg har tidligere vært en utvikler hos Studvest hvor jeg fikk masse nyttig kunnskap og erfaring med gjennomføring av prosjekter og samarbeidsstrategier:
+				</p>
+				<ul>
+					<li>Scrum-metodikk</li>
+					<li>Parprogrammering</li>
+					<li>Klar kommunikasjon og informasjonsdeling via: Teams og Miro</li>
+					<li>Git feature-branches og håndtering av pull-requests</li>
+					<li>Git-actions til å automatisere Build og Deployment av dev- og master-branches</li>
+					<li>Bruk av designsystemer og tilgjenglighetsprinsippet WCAG</li>
+					<li>Grunnleggende forståelse for SEO og Open Graph</li>
+					<li>Lightweight rammeverk som bl.a Astro.js og optimaliseringsteknikker</li>
+				</ul>
+
+				<p>
+					Innen front-end er jeg spesielt interesert i engasjerende 3D visualiseringer og bruk av webgl for å skape unike brukeropplevelser i nettleser med THREE.js. I det siste har jeg også fått en interesse for brukerinteraksjon i XR, etter å ha lest Eirik Helland Urkes bok om VR og AR, og kjøpt en Meta Quest 3.
+				</p>
+				
+				<p>
+					Prosjektene for UiB MIX250 og Studvest har gitt meg mange gode erfaringer i å samarbeide med UI/UX-designere og jeg liker å kunne utveksle kunnskap på tvers av felt og spesialiseringer.
+				</p>
+
+				<h3>Fritid</h3>
+
+				<p>
+					På fritiden er jeg alltid på utkikk etter å lære, og teste interesante verktøy og teknologier, noe jeg fikk muligheten til gjennom UiB MIX250 oppdraget.
+				</p>
+	
+				<p>
+					Jeg har også andre hobbier som: 3D-design og 3D-printing, eksperimentering med Linux og VMs, PC og VR-gaming, og jeg bygger nå for tiden en Homelab/hjemmeserver.
+				</p>
+
+			
+
+			</section>
+			<Contact />
+		</main>
+		<Footer />
+	</body>
+
+	<style>
+
+	</style>
+
+
+	<script src="../scripts"></script>
+</html>

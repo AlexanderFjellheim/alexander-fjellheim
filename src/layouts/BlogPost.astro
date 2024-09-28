@@ -10,7 +10,7 @@ import Contact from '../components/Contact.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage, heroImage2, heroImage3, category, role, team, duration, technologies} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, heroImage2, heroImage3, heroImage4, category, role, team, duration, technologies} = Astro.props;
 
 
 var posts = (await getCollection("blog"));
@@ -29,26 +29,27 @@ var posts = (await getCollection("blog"));
 		<main>
 			<div class="container">
 				<div class="preview">
-					<img src={heroImage}/>
-					<img src={heroImage2}/>
-					<img src={heroImage3}/>
+					<button><img src={heroImage}/></button>
+					<button><img src={heroImage2}/></button>
+					<button><img src={heroImage3}/></button>
+					<button><img src={heroImage4}/></button>
 				</div>
-				<img class="product" src={heroImage}/>
+				<img class="product" id="product" src={heroImage} />
 				<div class="description">
-					<h3>Rolle 👨‍💻<br>
-						{role}</h3>
+					<p>Rolle 👨‍💻<br>
+						{role}</p>
 
-					<h3>Team 👥<br>
+					<p>Team 👥<br>
 						{team?.map((elem) => (
-							<span>{elem}<br></span>
-						))}</h3>
+							<span>{"- "+elem}<br></span>
+						))}</p>
 
-					<h3>Varighet 🕘<br> 
-						{duration}</h3>
-					<h3>Teknologier 🧮<br> 
+					<p>Varighet 🕘<br> 
+						{duration}</p>
+					<p>Teknologier 🧮<br> 
 						{technologies?.map((elem) => (
-							<span>{elem}<br></span>
-						))}</h3>
+							<span>{"- "+elem}<br></span>
+						))}</p>
 				</div>
 			</div>
 
@@ -57,8 +58,9 @@ var posts = (await getCollection("blog"));
 			</div>
 
 			<div class="suggestions">
-				<h3 class="category-title">{category == undefined ? "Other" : category}</h3>
 
+				{/* <p class="category-title">{category == undefined ? "Other" : category}</p> */}
+				<p class="category-title">Lignende prosjekter:</p>
 				<div class="section-container">
 				{posts.filter((post) => post.data.category == category && post.data.title != title).map((post) => (
 					<Card
@@ -88,23 +90,31 @@ var posts = (await getCollection("blog"));
 		grid-gap: 15%;
 	}
 
-	.preview {
 
-	}
-	.preview img {
+	.preview button {
 		cursor: pointer;
+		aspect-ratio: 1;
+		padding: 0;
+		margin: 0;
 		margin-bottom: 1rem;
-		width: 100%;
+		border: none;
 		transition: ease-out 0.15s;
 	}
-	.preview img:hover {
-		box-shadow: 0 5px 0 #444444;;
+
+	.preview button:hover {
+		box-shadow: 0 5px 0 #444444;
 	}
 
-	.product {
+	.preview img {
 		width: 100%;
 	}
+
+
+	.product {
+		width: 100%;		
+	}
 	.description {
+
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: auto auto auto auto;
@@ -112,24 +122,31 @@ var posts = (await getCollection("blog"));
 	}
 
 	.description > * {
-		font-weight: 100;
 		padding-left: 1rem;
 		padding-right: 0.5rem;
-		background-color: #FFFCF7;
+		/*background-color: #686868;*/
 		height: 100%;
 		margin: 0;
+		margin-bottom: 0.5em;
+		font-weight: 400;
 	}
 
-	.description > h3::first-line {
+	.description > p::first-line {
+		color: orange;
 		font-weight: 700;
-		color: rgb(0, 0, 0);
-		font-size: 1em;
+	}
+
+	.category-title {
+		color: orange;
+		font-weight: 700;
+
 	}
 
 
 	.inspiration {
 		max-width: 720px;
 	}
+
 
 
 	hr {
@@ -140,3 +157,22 @@ var posts = (await getCollection("blog"));
 		font-style: italic;
 	} */
 </style>
+
+<script>
+	const productImage = document.getElementById("product");
+
+	function selectImage(button) {
+		if (productImage) {
+			productImage.src = button.src;
+		}
+		else {
+			alert("Error productImage null")
+		}
+	}
+
+	const buttons = document.querySelectorAll(".preview button");
+
+	buttons.forEach((button) => {
+		button.addEventListener('click', () => selectImage(button.firstChild));
+	});
+</script>

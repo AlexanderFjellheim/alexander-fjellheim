@@ -2,8 +2,8 @@
 title: "Studvest: 8.mars"
 description: ""
 pubDate: "Jul 10 2023"
-heroImage: "/8mars.png"
-heroImage2: "/8mars2.png"
+heroImage: "/8mars/8mars.png"
+heroImage2: "/8mars/8mars2.png"
 category: "Webutvikling"
 role: "Utvikling av komponenter"
 team: ["Alexander Fjellheim", "Snorre Alvsvåg"]

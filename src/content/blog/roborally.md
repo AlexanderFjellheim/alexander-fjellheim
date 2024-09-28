@@ -2,9 +2,9 @@
 title: "Java libgdx: RoboRally"
 description: ""
 pubDate: "Jul 12 2023"
-heroImage: "/roborally.png"
-heroImage2: "/roborally2.png"
-heroImage3: "/roborally3.gif"
+heroImage: "/roborally/roborally.png"
+heroImage2: "/roborally/roborally2.png"
+heroImage3: "/roborally/roborally3.gif"
 category: "Java libgdx"
 role: "Utvikling av komponenter"
 team: ["Alexander Fjellheim"]

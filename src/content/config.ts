@@ -23,6 +23,9 @@ const blog = defineCollection({
 		heroImage3: z
 			.string().
 			optional(),
+		heroImage4: z
+			.string().
+			optional(),
 		category: z
 			.string()
 			.optional(),

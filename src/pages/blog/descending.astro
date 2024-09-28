@@ -24,9 +24,9 @@ var posts = (await getCollection("blog")).sort(
       <div class="title">
         <h1>Prosjekter</h1>
         <div class="dropdown">
-          <button class="dropbtn">Dato (synkende)</button>
+          <button class="dropbtn">Sorter: nyeste</button>
           <div class="dropdown-content">
-            <a href="/blog/">Dato (stigende)</a>
+            <a href="/blog/">Sorter: eldste</a>
             <!-- <a href="/blog/descending">Dato (synkende)</a> -->
             <a href="/blog/category">Kategori</a>
           </div>
@@ -41,7 +41,7 @@ var posts = (await getCollection("blog")).sort(
                 title={post.data.title}
                 src={post.data.heroImage}
                 href={`/blog/${post.slug}/`}
-                category={post.data.category}
+
               ></Card>
             ))
           }

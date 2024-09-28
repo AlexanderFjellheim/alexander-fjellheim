@@ -8,34 +8,35 @@ import { SITE_TITLE } from '../consts';
 
 	<nav>
 		<HeaderLink href="/">
-			<div class="home">
-				{SITE_TITLE}
-			</div>
+
+
+			
+			<div class="typing-container">
+				<div class="typed-out">whoami</div></div>
+				<div class="name">Alexander Fjellheim</div>	
 		</HeaderLink>
 		
 
-		<HeaderLink href="/blog">
-			Mine prosjekter
+		<HeaderLink href="/blog/category">
+			<span class="prefix">cd/ </span><span class="link_text">prosjekter</span>
 		</HeaderLink>
 		
 		<HeaderLink href="/about">
-			Litt om meg
+			<span class="prefix">cat/ </span><span class="link_text">om_meg.txt</span>
 		</HeaderLink>
 
 		<HeaderLink href="#contact">
-			Kontakt meg
+			<span class="link_text">kontakt meg</span>
 		</HeaderLink>
 	</nav>
 </header>
 <style>
-	.home {
-		text-transform: uppercase;
-	}
+
 	header {
-		background-color: #F6F1EB;
+		background-color: #141414;
 		position: sticky;
 		height: 4.5em;
-		box-shadow: 1px 5px 40px #ebe7e1;
+		/*box-shadow: 1px 5px 40px #363636;*/
 /* 		padding: 0;
 		margin: 0; 
 		width: 100vw;
@@ -55,4 +56,67 @@ import { SITE_TITLE } from '../consts';
 		align-items: center;
 		
 	}
+
+	.typing-container {
+		margin-left:4em;
+
+	}
+
+	.typed-out{
+	overflow: hidden;
+	border-right: .15em solid orange;
+	white-space: nowrap;
+	animation: 
+	typing 0.5s steps(9, end) forwards;
+	font-size: 1.6rem;
+	width: 10%;
+	}
+
+	.typed-out::before {
+		content: "~$ "
+	}
+	.name {
+		color: transparent;
+		animation: after_typing 0.01s;
+		animation-delay: 0.8s;
+		animation-fill-mode: forwards;
+		
+	}
+	.prefix { 
+		font-size: 1.2em;
+		font-weight: 700;
+		font-family: "VT323", system-ui;
+	}
+
+	.link_text {
+		color: orange;
+		font-size: 1.2em;
+		font-weight: 700;
+		font-family: "VT323", system-ui;
+	}
+
+
+	@keyframes typing {
+		0% {
+			width: 15%
+			border-right: .15em solid orange;
+		}
+
+		100% {
+			width: 80%;
+			border-right: .15em solid orange;
+		}
+	}
+
+	@keyframes after_typing {
+		0% {
+			color: transparent;
+		}
+		100% {
+			color: white;
+		}
+	}
+
+
+
 </style>
