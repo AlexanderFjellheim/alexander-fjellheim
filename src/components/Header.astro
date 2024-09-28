@@ -57,10 +57,7 @@ import { SITE_TITLE } from '../consts';
 		
 	}
 
-	.typing-container {
-		margin-left:4em;
 
-	}
 
 	.typed-out{
 	overflow: hidden;
@@ -83,14 +80,14 @@ import { SITE_TITLE } from '../consts';
 		
 	}
 	.prefix { 
-		font-size: 1.2em;
+		font-size: 1.2rem;
 		font-weight: 700;
 		font-family: "VT323", system-ui;
 	}
 
 	.link_text {
 		color: orange;
-		font-size: 1.2em;
+		font-size: 1.2rem;
 		font-weight: 700;
 		font-family: "VT323", system-ui;
 	}
@@ -117,6 +114,44 @@ import { SITE_TITLE } from '../consts';
 		}
 	}
 
+	@media screen and (max-width: 640px) {
+		.prefix {
+			font-size: 1rem;
+		}
+		.link_text {
+			font-size: 1rem;
+		}
+		.typed-out {
+			font-size: 1.2rem;
+			line-height: 1;
+			margin-left: 1rem;
+			margin-top: 1rem;
+		}
+		.name {
+			margin-left: 1rem;
+			margin-bottom: 1rem;
+			line-height: 1;
+		}
+	}
 
+	@media screen and (max-width: 480px) {
+		.prefix {
+			font-size: 1rem;
+		}
+		.link_text {
+			font-size: 1rem;
+		}
+		.typed-out {
+			font-size: 1.2rem;
+			line-height: 1;
+			margin-left: 1rem;
+			margin-top: 1rem;
+		}
+		.name {
+			margin-left: 1rem;
+			margin-bottom: 1rem;
+			line-height: 1;
+		}
+	}
 
 </style>

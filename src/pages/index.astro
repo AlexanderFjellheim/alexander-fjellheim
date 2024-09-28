@@ -28,22 +28,14 @@ var posts = (await getCollection("blog")).sort(
 		<main>
 			<h1>Nylige prosjekter og oppdrag</h1>
 			<section>
-				<div class="section-container">
+				<div class="section-container" id="sc_index">
 					{
 						posts.map((post) => (
-							// <li>
-							// 	<FormattedDate date={post.data.pubDate} />
-							// 	<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							// </li>
-
-							// <img src={post.data.heroImage}/>
 							<Card
 								title={post.data.title}
 								src={post.data.heroImage}
 								href={`/blog/${post.slug}/`}
-							>
-						
-							</Card>
+							></Card>
 						))
 					}
 				</div>
@@ -53,3 +45,8 @@ var posts = (await getCollection("blog")).sort(
 		<Footer />
 	</body>
 </html>
+
+
+<style>
+
+</style>

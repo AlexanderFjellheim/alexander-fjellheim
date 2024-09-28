@@ -40,7 +40,6 @@ Jeg kom med raspberry pi'en og ekstra backup på et annet SD-kort. Det var litt 
 
 <h3>REFLEKSJONER</h3>
 <p>
-Jeg brukte flere timer på å lodde lyslenken som liste godt da veggene på ustillingen var hvite, men da de ble sorte viste ikke lyset seg noe godt. Derfor var dette en bommert som jeg brukte alt for mange timer på. I ettertid har museumet også skrudd ned lyden betraktelig da de heller ønsket å ha en felles lyd over hele utstillingen. 
-
+Jeg brukte flere timer på å lodde lyslenken som liste godt da veggene på ustillingen var hvite, men da de ble sorte viste ikke lyset seg noe godt. Derfor var dette en bommert som jeg brukte alt for mange timer på. I ettertid har museumet også skrudd ned lyden betraktelig da de heller ønsket å ha en felles lyd over hele utstillingen.
 </p>
 <section>
