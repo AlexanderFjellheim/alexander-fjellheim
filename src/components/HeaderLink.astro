@@ -11,10 +11,10 @@ const { pathname } = Astro.url;
 const isActive = href === pathname && href !== '/';
 
 
-alert("href: " + href)
-alert("pathname: " + pathname)
+//alert("href: " + href)
+//alert("pathname: " + pathname)
 
-alert(isActive)
+//alert(isActive)
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>

@@ -1,7 +1,7 @@
 export const defaultAvatar = {
   id: "avatar",
   type: "gltf",
-  url: "../../public/test.glb",
+  url: "../../test.glb",
 };
 
 
