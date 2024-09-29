@@ -1,7 +1,7 @@
 ---
 title: "Studvest: Skimagasinet"
 description: ""
-pubDate: "Jul 09 2023"
+pubDate: "Mar 30 2023"
 heroImage: "/skimagasinet/skimagasinet.png"
 heroImage2: "/skimagasinet/skimagasinet.png"
 heroImage3: "/skimagasinet/skimagasin.gif"
@@ -26,6 +26,6 @@ technologies: ["Astro.build", "Highcharts", "ScrollyTell"]
 <p>
     Vi fikk all informasjon en fredag ettermiddag, og hadde siste utkast søndag kveld.
 </p>
-<h3>Refleksjoner rundt hva som er lært</h3>
+<a href="https://spesial.studvest.no/skimagasinet/dist/">Les Studvest Spesialen</a>
 <p></p>
 <section>

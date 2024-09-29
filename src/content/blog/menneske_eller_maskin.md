@@ -19,7 +19,7 @@ Jeg ble ansatt av UiB til å bistå med teknisk utvikling til to gruppers bachel
 </h2>
 
 <p>
-Bachelorprosjektet var en teknologisk utstilling på Universitetsmuseet i Bergen som skulle ta opp <a href="https://teklab.uib.no/artikler/utstilling-kunstig-intelligens-skaper-ambivalens/"> menneskers forhold til kunstig intelligens </a> og var utstilt fra mai 2024 til desember 2024. Jeg var med på å utvikle hovedinstallasjonen til <a href="">Maskin eller Menneske</a> og <a href="">Eyes of AI</a>. Videre skal jeg snakke om prosjektet til "Maskin eller Menneske":
+Bachelorprosjektet var en teknologisk utstilling på Universitetsmuseet i Bergen som skulle ta opp <a href="https://teklab.uib.no/artikler/utstilling-kunstig-intelligens-skaper-ambivalens/"> menneskers forhold til kunstig intelligens </a> og var utstilt fra mai 2024 til desember 2024. Jeg var med på å utvikle hovedinstallasjonen til <a href="https://teklab.uib.no/artikler/maskin-eller-menneske/">Maskin eller Menneske</a> og <a href="https://teklab.uib.no/artikler/se-verden-gjennom-oynene-til-ai/">Eyes of AI</a>. Videre skal jeg snakke om prosjektet til "Maskin eller Menneske":
 </p>
 
 <p>

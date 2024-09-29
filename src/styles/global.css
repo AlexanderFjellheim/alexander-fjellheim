@@ -27,6 +27,10 @@
 
 }
 
+html {
+	height: auto;
+}
+
 h1 {
 	font-size: 3rem;
 	font-weight: 400;
@@ -144,24 +148,46 @@ main {
 		margin-right: 1rem;
 		margin-bottom: 2rem;
 	}
+	.home .contact {
+		margin-top: 10em;
+	}
+	.oldest .contact {
+		margin-top: 10em;
+	}
+	.newest .contact {
+		margin-top: 10em;
+	}
 
 }
 @media screen and (max-width: 480px) {
 	.section-container {
 		grid-template-columns: repeat(1, 1fr);
-		
 	}
 
-	footer {
-		margin-left: 1rem;
-		margin-right: 1rem;
-		margin-bottom: 2rem;
-	}
 	h1 {
 		font-size: 2rem;
 	}
 
-	nav a:last-child {
-		display: none;
+	.home .contact {
+		margin-top: 37em;
+	}
+	.oldest .contact {
+		margin-top: 37em;
+	}
+	.newest .contact {
+		margin-top: 37em;
+	}
+}
+
+
+@media screen and (max-width: 385px) {
+	.home .contact {
+		margin-top: 32em;
+	}
+	.oldest .contact {
+		margin-top: 32em;
+	}
+	.newest .contact {
+		margin-top: 32em;
 	}
 }

@@ -1,7 +1,7 @@
 ---
 title: "Studvest: 8.mars"
 description: ""
-pubDate: "Jul 10 2023"
+pubDate: "Mar 08 2023"
 heroImage: "/8mars/8mars.png"
 heroImage2: "/8mars/8mars2.png"
 category: "Webutvikling"
@@ -28,6 +28,6 @@ technologies: ["Astro.build", "Highcharts"]
     <li>Bildetekst-komponent</li>
     <li>Highcharts graf</li>
 </ul>
-<h3>Refleksjoner rundt hva som er lært</h3>
+<a href="https://spesial.studvest.no/Eight_March/dist/">Les Studvest Spesialen</a>
 <p></p>
 <section>

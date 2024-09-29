@@ -1,7 +1,7 @@
 ---
 title: "UI/UX: FoodwAIste App"
 description: ""
-pubDate: "Jul 11 2023"
+pubDate: "Jan 11 2023"
 heroImage: "/foodwaste/foodwaste.png"
 heroImage2: "/foodwaste/foodwaste.png"
 heroImage3: "/foodwaste/foodwaste.png"
