@@ -25,21 +25,26 @@ Bachelorprosjektet var en teknologisk utstilling på Universitetsmuseet i Bergen
 <p>
 Menneske eller maskin-gruppen ønsket å ha en oppstilling som brukte spillifisering til å teste publikums evne til å skille mellom ekte eller falske bilder. 
 
-Jeg fikk tilgang på figma-filen til studentene, hvor de hadde designet ønsket utseende og prosess for spillet. Gruppen delte en mappe med AI-generere bilder og en annen mappe med ekte bilder. I tillegg fikk jeg ønsket lyder til spillet. 
+Jeg fikk tilgang på Figma-filen til studentene, hvor de hadde designet ønsket utseende og prosess for spillet. Gruppen delte en mappe med AI-generere bilder og en annen mappe med ekte bilder. I tillegg fikk jeg ønsket lyder til spillet. 
 
-Jeg valgte å lage en nettside med JavaScript som kjøres på localhost fra en raspberry pi 5. Jeg ønsket også å implementere rødt og grønt lys fra en lyslenke bak TVen for ekstra bekreftelse på at man enten har trykket riktig eller feil. Lyslenken ble loddet og kodet av meg og en annen student i MIX-faget, og ut ifra hvor mange prosent man hadde klart å gjette rett, ville lyslenken også lyse opp i samme prosent ut ifra lengen dens. 
+Jeg valgte å lage en single-page-application med JavaScript som kjører lokalt på en Raspberry PI. PIen kjører også en Flask server som styrer en RGB lyslenke rundt rammen på TVen. Lysene er animert til å lyse opp grønt eller rødt ved riktig eller feil svar.
+Når spillet er over og poengsum-animasjonen vises, lyser diodene opp i sync med "progress"-animasjonen og resultatet. Lyslenken er drevet av en 5V 50W ekstern strømforsyning og ble loddet og meg og en annen MIX-student til å bestå av 250 dioder og kunne gå rundt omkretsen av skjermen brukt til installasjonen.
 </p>
 
 <h3>
 MONTERING
 </h3>
 <p>
-Jeg kom med raspberry pi'en og ekstra backup på et annet SD-kort. Det var litt tricky å få alt av strømforsyning til lyslenken og rp5en til å henge bak TVen, men dette fikk jeg også hjelp av museumsansatte til. Lyslenken ble hengt opp med dobbeltsidig teip fra museet.
+Jeg kom med Raspberry PI'en og ekstra SD-kort med endelige disc-image backups til PIen. Det var litt tricky å montere lyslenken og skjule strømforskyning og ledninger bak skjermen, men dette fikk jeg også hjelp av museumsansatte til.
 </p>
 
 
 <h3>REFLEKSJONER</h3>
 <p>
-Jeg brukte flere timer på å lodde lyslenken som liste godt da veggene på ustillingen var hvite, men da de ble sorte viste ikke lyset seg noe godt. Derfor var dette en bommert som jeg brukte alt for mange timer på. I ettertid har museumet også skrudd ned lyden betraktelig da de heller ønsket å ha en felles lyd over hele utstillingen.
+Jeg har brukt mye tid på lyslenken og effektene, men siden veggen ble malt sort, ble effekten lite synlig. Dette var en bommert, men jeg lærte noe interesant i prosessen. I ettertid har museumet også skrudd ned lyden betraktelig da de heller ønsket å ha en felles lyd over hele utstillingen.
+</p>
+
+<p>
+<a href="https://github.com/AlexanderFjellheim/maskinEllerMenneske_QuizApp">Lenke til prosjektet på GitHub</a>
 </p>
 <section>
